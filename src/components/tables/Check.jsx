@@ -1,4 +1,18 @@
+import { CheckIcon, CloseIcon, InfoIcon } from '@chakra-ui/icons';
 import { Table, Thead, Tbody, Tr, Th, Td, TableCaption, TableContainer, Checkbox } from '@chakra-ui/react';
+
+// Data array outside of the component
+const tableData = [
+    { checked: true, label: 'millimetres (mm)', multiplier: 25.4, icon: <CloseIcon /> },
+    { checked: false, label: 'centimetres (cm)', multiplier: 30.48, icon: <InfoIcon /> },
+    { checked: false, label: 'metres (m)', multiplier: 0.91444, icon: <CheckIcon /> },
+    { checked: true, label: 'millimetres (mm)', multiplier: 25.4, icon: <CloseIcon /> },
+    { checked: false, label: 'centimetres (cm)', multiplier: 30.48, icon: <InfoIcon /> },
+    { checked: false, label: 'metres (m)', multiplier: 0.91444, icon: <CheckIcon /> },
+    { checked: true, label: 'millimetres (mm)', multiplier: 25.4, icon: <CloseIcon /> },
+    { checked: false, label: 'centimetres (cm)', multiplier: 30.48, icon: <InfoIcon /> },
+    { checked: false, label: 'metres (m)', multiplier: 0.91444, icon: <CheckIcon /> },
+];
 
 const Check = () => {
     return (
@@ -13,40 +27,17 @@ const Check = () => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    <Tr>
-                        <Td>
-                            <Checkbox defaultChecked>Checkbox</Checkbox>
-                        </Td>
-                        <Td>millimetres (mm)</Td>
-                        <Td isNumeric>25.4</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>
-                            <Checkbox>Checkbox</Checkbox>
-                        </Td>
-                        <Td>centimetres (cm)</Td>
-                        <Td isNumeric>30.48</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>yards</Td>
-                        <Td>metres (m)</Td>
-                        <Td isNumeric>0.91444</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>inches</Td>
-                        <Td>millimetres (mm)</Td>
-                        <Td isNumeric>25.4</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>feet</Td>
-                        <Td>centimetres (cm)</Td>
-                        <Td isNumeric>30.48</Td>
-                    </Tr>
-                    <Tr>
-                        <Td>yards</Td>
-                        <Td>metres (m)</Td>
-                        <Td isNumeric>0.91444</Td>
-                    </Tr>
+                    {tableData.map((row, index) => (
+                        <Tr key={index}>
+                            <Td>
+                                <Checkbox defaultChecked={row.checked}>Checkbox</Checkbox>
+                            </Td>
+                            <Td>
+                                {row.icon} {row.label}
+                            </Td>
+                            <Td isNumeric>{row.multiplier}</Td>
+                        </Tr>
+                    ))}
                 </Tbody>
             </Table>
         </TableContainer>
