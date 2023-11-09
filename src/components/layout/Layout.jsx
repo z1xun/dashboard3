@@ -1,9 +1,10 @@
-import React from 'react';
-import Header from './header/Header';
-import styled from 'styled-components';
-import Title from '../common/Tilte';
-import History from '../common/History';
-import { Box } from '@chakra-ui/react';
+import React from "react";
+import Header from "./header/Header";
+import styled from "styled-components";
+import Title from "../common/Tilte";
+import History from "../common/History";
+import { Box, Flex } from "@chakra-ui/react";
+import Utill from "../common/Utill";
 
 const Layout = ({ title, pagename, children }) => {
     // const { pagename, children } = props;
@@ -11,9 +12,12 @@ const Layout = ({ title, pagename, children }) => {
         <Wrap>
             <Header />
             <main id="main">
-                <Box p="0 0 35px 10px" bg={'primary'}>
-                    <History pagename={pagename} />
-                    <Title title={title} />
+                <Box p="0 0 35px 10px" display="flex" justifyContent="space-between">
+                    <div className="left">
+                        <History pagename={pagename} />
+                        <Title title={title} />
+                    </div>
+                    <Utill />
                 </Box>
                 {children}
             </main>
