@@ -1,8 +1,4 @@
 import {
-    Card,
-    CardHeader,
-    Heading,
-    CardBody,
     Table,
     TableCaption,
     Thead,
@@ -228,58 +224,69 @@ const data = [
         number: 25.4,
         percentage: 75.5,
     },
+    {
+        title: 'Marketplace',
+        image: [
+            {
+                src: apple,
+                alt: 'apple',
+            },
+            {
+                src: android,
+                alt: 'android',
+            },
+            {
+                src: windows,
+                alt: 'windows',
+            },
+        ],
+        number: 25.4,
+        percentage: 75.5,
+    },
 ];
 
 const Development = () => {
     return (
-        <Card>
-            <CardHeader>
-                <Heading size="md">Development Table</Heading>
-            </CardHeader>
-
-            <CardBody py={2} px={5}>
-                <TableContainer overflowX={'hidden'} overflowY={'auto'} maxH="296px">
-                    {/*  size={['sm', 'md', 'lg']} */}
-                    <Table variant="simple">
-                        <TableCaption>Development Table</TableCaption>
-                        <Thead>
-                            <Tr>
-                                <Th>Title</Th>
-                                <Th>Title</Th>
-                                <Th isNumeric>Title</Th>
-                                <Th>Title</Th>
-                            </Tr>
-                        </Thead>
-                        <Tbody>
-                            {data.map((item, index) => (
-                                <Tr key={index}>
-                                    <Td>{item.title}</Td>
-                                    <Td>
-                                        <HStack spacing={1} alignItems={'center'}>
-                                            {item.image.map((images, i) => (
-                                                <Image key={i} src={images.src} alt={images.alt} />
-                                            ))}
-                                        </HStack>
-                                    </Td>
-                                    <Td isNumeric>{item.number}</Td>
-                                    <Td>
-                                        <Flex alignItems={'center'}>
-                                            <Box w="32px" textAlign={'right'}>
-                                                {item.percentage}
-                                            </Box>
-                                            <Text variant="txt134" color="#777">
-                                                %
-                                            </Text>
-                                            <Progress w="63px" ml="10px" value={item.percentage} />
-                                        </Flex>
-                                    </Td>
-                                </Tr>
-                            ))}
-                        </Tbody>
-                    </Table>
-                </TableContainer>
-            </CardBody>
-        </Card>
+        <TableContainer overflowX={'hidden'} overflowY={'auto'} maxH="296px">
+            {/*  size={['sm', 'md', 'lg']} */}
+            <Table variant="simple">
+                <TableCaption>Development Table</TableCaption>
+                <Thead>
+                    <Tr>
+                        <Th>Title</Th>
+                        <Th>Title</Th>
+                        <Th isNumeric>Title</Th>
+                        <Th>Title</Th>
+                    </Tr>
+                </Thead>
+                <Tbody>
+                    {data.map((item, index) => (
+                        <Tr key={index}>
+                            <Td>{item.title}</Td>
+                            <Td>
+                                <HStack spacing={1} alignItems={'center'}>
+                                    {item.image.map((images, i) => (
+                                        <Image key={i} src={images.src} alt={images.alt} />
+                                    ))}
+                                </HStack>
+                            </Td>
+                            <Td isNumeric>{item.number}</Td>
+                            <Td>
+                                <Flex alignItems={'center'}>
+                                    <Box w="32px" textAlign={'right'}>
+                                        {item.percentage}
+                                    </Box>
+                                    <Text variant="txt134" color="#777">
+                                        %
+                                    </Text>
+                                    <Progress w="63px" ml="10px" value={item.percentage} />
+                                </Flex>
+                            </Td>
+                        </Tr>
+                    ))}
+                </Tbody>
+            </Table>
+        </TableContainer>
     );
 };
 
