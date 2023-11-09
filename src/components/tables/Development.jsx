@@ -247,11 +247,11 @@ const data = [
 
 const Development = () => {
     return (
-        <TableContainer overflowX={'hidden'} overflowY={'auto'} maxH="296px">
+        <TableContainer pos={'relative'} overflowX={'hidden'} overflowY={'auto'} maxH="296px">
             {/*  size={['sm', 'md', 'lg']} */}
             <Table variant="simple">
                 <TableCaption>Development Table</TableCaption>
-                <Thead>
+                <Thead pos={'sticky'} top={0} left={0} right={0} zIndex={10} bg={'#fff'} borderBottom={'1px solid red'}>
                     <Tr>
                         <Th>Title</Th>
                         <Th>Title</Th>

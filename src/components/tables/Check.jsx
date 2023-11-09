@@ -19,7 +19,7 @@ const Check = () => {
         <TableContainer>
             <Table variant="simple">
                 <TableCaption>Imperial to metric conversion factors</TableCaption>
-                <Thead>
+                <Thead pos={'sticky'}>
                     <Tr>
                         <Th>To convert</Th>
                         <Th>into</Th>
@@ -27,7 +27,16 @@ const Check = () => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    {tableData.map((row, index) => (
+                    <Tr>
+                        <Td>
+                            <Checkbox defaultChecked>Checkbox</Checkbox>
+                        </Td>
+                        <Td>
+                            <CloseIcon /> Disabled
+                        </Td>
+                        <Td isNumeric>24.Jan.2021</Td>
+                    </Tr>
+                    {/* {tableData.map((row, index) => (
                         <Tr key={index}>
                             <Td>
                                 <Checkbox defaultChecked={row.checked}>Checkbox</Checkbox>
@@ -37,7 +46,7 @@ const Check = () => {
                             </Td>
                             <Td isNumeric>{row.multiplier}</Td>
                         </Tr>
-                    ))}
+                    ))} */}
                 </Tbody>
             </Table>
         </TableContainer>

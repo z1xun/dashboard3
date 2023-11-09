@@ -18,6 +18,7 @@ const Layout = (props) => {
                     right={'20px'}
                     zIndex={1}
                     h={'90px'}
+                    px={'30px'}
                     alignItems={'center'}
                     bg={'rgba(255, 255, 255, 0.8)'}
                     borderRadius={'90px'}
