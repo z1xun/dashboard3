@@ -27,16 +27,7 @@ const Check = () => {
                     </Tr>
                 </Thead>
                 <Tbody>
-                    <Tr>
-                        <Td>
-                            <Checkbox defaultChecked>Checkbox</Checkbox>
-                        </Td>
-                        <Td>
-                            <CloseIcon /> Disabled
-                        </Td>
-                        <Td isNumeric>24.Jan.2021</Td>
-                    </Tr>
-                    {/* {tableData.map((row, index) => (
+                    {tableData.map((row, index) => (
                         <Tr key={index}>
                             <Td>
                                 <Checkbox defaultChecked={row.checked}>Checkbox</Checkbox>
@@ -46,7 +37,7 @@ const Check = () => {
                             </Td>
                             <Td isNumeric>{row.multiplier}</Td>
                         </Tr>
-                    ))} */}
+                    ))}
                 </Tbody>
             </Table>
         </TableContainer>

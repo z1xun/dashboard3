@@ -49,6 +49,13 @@ const theme = extendTheme({
         secondary_grey_700: '#707EAE',
         Secondary_Grey_600: '#A3AED0',
     },
+    breakpoints: {
+        sm: '480px',
+        md: '720px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1440px',
+    },
 });
 
 export default theme;

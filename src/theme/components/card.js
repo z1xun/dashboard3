@@ -15,7 +15,7 @@ const baseStyle = definePartsStyle({
         [$bg.variable]: 'colors.chakra-body-bg',
         backgroundColor: $bg.reference,
         boxShadow: 'none',
-        borderRadius: $radius.reference,
+        borderRadius: '20px',
         color: 'chakra-body-text',
         borderWidth: 0,
         borderColor: $borderColor.reference,
