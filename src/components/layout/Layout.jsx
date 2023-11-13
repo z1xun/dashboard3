@@ -4,17 +4,16 @@ import styled from "styled-components";
 import Title from "../common/Tilte";
 import History from "../common/History";
 import { Box, Flex, Text } from "@chakra-ui/react";
-
 const Layout = (props) => {
     const { pagename, children, title } = props;
     return (
-        <Box display="flex" flexDirection="column" pl={"290px"} background="globalBg">
+        <Box display="flex" flexDirection="column" pl={{ base: "0", lg: "290px" }} background="globalBg">
             <Header />
             <Box as="main" id="main" minH={"100vh"} p={"140px 30px 20px"}>
                 <Flex
                     pos={"fixed"}
                     top={"20px"}
-                    left={"310px"}
+                    left={{ base: "20px", lg: "310px" }}
                     right={"20px"}
                     zIndex={1}
                     h={"90px"}
@@ -23,6 +22,7 @@ const Layout = (props) => {
                     bg={"rgba(255, 255, 255, 0.8)"}
                     borderRadius={"90px"}
                     backdropFilter={"saturate(180%) blur(8px)"}
+                    transition={"all 0.2s ease-in-out"}
                 >
                     <Box>
                         <History pagename={pagename} />
@@ -37,5 +37,4 @@ const Layout = (props) => {
         </Box>
     );
 };
-
 export default Layout;
